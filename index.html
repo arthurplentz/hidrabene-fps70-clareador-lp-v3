@@ -299,6 +299,12 @@
     .kit-now { font-family:var(--font-title); font-size:22px; font-weight:800; color:var(--pink-fluor); line-height:1.1; }
     .kit-parc { font-family:var(--font-title); font-size:11.5px; color:var(--ink-soft); margin:4px 0 14px; }
     .kit-card .btn { margin-top:auto; }
+    /* selo de validade (kits de maior quantidade) — sutil mas legível */
+    .kit-valid { align-self:center; display:inline-flex; align-items:center; gap:6px;
+      font-family:var(--font-title); font-size:11.5px; font-weight:700; letter-spacing:0.01em;
+      color:var(--pink-accent); background:var(--pink-soft); padding:5px 11px; border-radius:var(--radius-lg);
+      margin:0 0 12px; }
+    .kit-valid svg { width:13px; height:13px; stroke:currentColor; stroke-width:1.8; fill:none; flex-shrink:0; }
     .kit-gift { display:flex; align-items:flex-start; gap:8px; font-family:var(--font-title); font-size:11px; color:var(--ink-soft); margin-top:18px; }
     .kit-gift svg { width:16px; height:16px; stroke:var(--pink-accent); fill:none; flex-shrink:0; }
 
@@ -742,6 +748,7 @@
         <p class="kit-old">De <s>R$ 99,90</s></p>
         <p class="kit-now">R$ 54,90</p>
         <p class="kit-parc">R$ 27,45/un · 12x de R$ 5,31</p>
+        <p class="kit-valid"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg> Validade até 2029</p>
         <button class="btn btn-fluor" onclick="comprarAgora('2-unidades')">Comprar agora</button>
       </article>
       <!-- 3 un (destaque) -->
@@ -752,6 +759,7 @@
         <p class="kit-old">De <s>R$ 149,90</s></p>
         <p class="kit-now">R$ 74,90</p>
         <p class="kit-parc">R$ 24,96/un · 12x de R$ 7,25</p>
+        <p class="kit-valid"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg> Validade até 2029</p>
         <button class="btn btn-fluor" onclick="comprarAgora('3-unidades')">Comprar agora</button>
       </article>
       <!-- assinatura -->
