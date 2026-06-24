@@ -202,6 +202,8 @@
     .band { position:relative; min-height:340px; display:flex; align-items:flex-end; padding:28px var(--content-pad) 32px;
       color:#fff; overflow:hidden; }
     .band .ph { position:absolute; inset:0; border-radius:0; }
+    .band-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; z-index:0; }
+    .band::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0.10) 30%,rgba(0,0,0,0.55) 100%); z-index:1; }
     .band-in { position:relative; z-index:2; max-width:330px; }
     .band-in h2 { font-family:var(--font-title); font-size:25px; font-weight:800; line-height:1.18; text-shadow:0 2px 18px rgba(0,0,0,0.5); }
     .band-in .btn { margin-top:18px; }
@@ -213,7 +215,7 @@
     .tech-intro .rule { width:46px; height:3px; background:var(--pink-accent); border-radius:2px; margin:14px auto 14px; }
     .tech-intro .sub { font-family:var(--font-title); font-size:20px; font-weight:400; color:var(--gray); }
     .tech-bubbles { background:var(--bg-soft); padding:0 var(--content-pad) 8px; }
-    .tech-bubbles .ph { aspect-ratio:1/1; max-width:280px; margin:0 auto; }
+    .tech-bubbles .ph, .tech-bubbles img { aspect-ratio:1/1; max-width:280px; width:100%; margin:0 auto; border-radius:var(--radius-md); object-fit:cover; }
 
     .tech-accs { background:var(--bg-soft); padding:20px var(--content-pad) 56px; }
     .tech-accs .h2 { margin-bottom:6px; }
@@ -253,7 +255,7 @@
     .tl-item li { position:relative; padding-left:16px; font-size:13.5px; line-height:1.5; color:var(--ink-soft); margin-bottom:4px; }
     .tl-item li::before { content:""; position:absolute; left:0; top:8px; width:5px; height:5px; border-radius:50%; background:var(--pink-mid); }
     .timeline-imgs { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:26px; }
-    .timeline-imgs .ph { aspect-ratio:1/1; }
+    .timeline-imgs .ph, .timeline-imgs img { aspect-ratio:1/1; width:100%; height:100%; object-fit:cover; border-radius:var(--radius-md); }
     .timeline-imgs .span2 { grid-column:1 / -1; aspect-ratio:16/9; }
 
     /* comparativo */
@@ -394,7 +396,7 @@
       .tech-intro h2 { font-size:40px; }
       .tech-block { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; max-width:1160px; margin:0 auto; padding:20px var(--content-pad) 70px; background:var(--bg-soft); }
       .tech-block .tech-bubbles, .tech-block .tech-accs { padding:0; background:none; }
-      .tech-bubbles .ph { max-width:none; }
+      .tech-bubbles .ph, .tech-bubbles img { max-width:none; aspect-ratio:4/5; }
 
       .dark-sec { padding:88px var(--content-pad); }
       .dark-inner { display:grid; grid-template-columns:1fr; max-width:1160px; margin:0 auto; }
@@ -584,16 +586,16 @@
     <div class="split-media">
       <div class="feature-media"><img src="./assets/images/hero-card3.webp" alt="Resultado de pele uniforme" width="800" height="1018" loading="lazy" /></div>
       <div class="mini-thumbs">
-        <div class="ph" style="aspect-ratio:1/1;">Foto<br>textura</div>
-        <div class="ph" style="aspect-ratio:1/1;">Foto<br>gota/ativo</div>
-        <div class="ph" style="aspect-ratio:1/1;">Foto<br>aplicação</div>
+        <img src="./assets/images/mockup-produto.webp" alt="Tubo do Protetor FPS 70 Clareador" width="900" height="1141" loading="lazy" style="object-fit:contain;background:#fff;" />
+        <img src="./assets/images/aplicacao-close.webp" alt="Aplicação do protetor no rosto" width="1000" height="943" loading="lazy" />
+        <img src="./assets/images/hero-card3.webp" alt="Resultado de pele uniforme" width="800" height="1018" loading="lazy" />
       </div>
     </div>
   </section>
 
   <!-- ░░ BANDA FULL-BLEED ░░ -->
   <section class="band" aria-label="Mais proteção, menos manchas">
-    <div class="ph dark">[ Vídeo/Foto full-bleed: rosto em close aplicando o protetor ]</div>
+    <img class="band-img" src="./assets/images/oferta-2.webp" alt="Mulher aplicando o Protetor Solar Facial FPS 70 Clareador" width="660" height="623" loading="lazy" />
     <div class="band-in">
       <h2>Mais proteção, menos manchas — todos os dias.</h2>
       <button class="btn btn-fluor" style="width:auto" onclick="irOferta()">Comprar agora</button>
@@ -610,7 +612,7 @@
 
   <div class="tech-block">
     <div class="tech-bubbles">
-      <div class="ph">[ Imagem: textura da loção / macro do produto ]</div>
+      <img src="./assets/images/mockup-3un-fundo.webp" alt="Protetor Solar Facial FPS 70 Clareador — fórmula e produto" width="1000" height="1250" loading="lazy" style="object-fit:contain;background:#fff;" />
     </div>
     <div class="tech-accs">
       <h2 class="h2">Uma fórmula pensada para agir em várias frentes da pele.</h2>
@@ -685,9 +687,9 @@
         </div>
       </div>
       <div class="timeline-imgs">
-        <div class="ph span2">[ Foto: antes e depois / progresso da pele ]</div>
-        <div class="ph">[ Foto: aplicação ]</div>
-        <div class="ph">[ Foto: textura ]</div>
+        <img class="span2" src="./assets/images/hero-card1.webp" alt="Antes e depois — progresso da pele" width="1228" height="1400" loading="lazy" />
+        <img src="./assets/images/aplicacao-close.webp" alt="Aplicação do protetor" width="1000" height="943" loading="lazy" />
+        <img src="./assets/images/raio-x-formula.webp" alt="Raio-X da fórmula do protetor" width="1000" height="1273" loading="lazy" style="object-fit:contain;background:#fff;" />
       </div>
     </div>
   </section>
@@ -749,7 +751,7 @@
       <!-- assinatura -->
       <article class="kit-card" role="listitem">
         <div class="kit-badges"><span class="kit-badge new">Assinatura</span><span class="kit-badge off">Todo mês</span></div>
-        <div class="kit-media"><div class="ph" style="width:100%;height:100%;border-radius:0;">[ Mockup<br>assinatura ]</div></div>
+        <div class="kit-media"><img src="./assets/images/mockup-produto.webp" alt="Assinatura mensal do Protetor FPS 70 Clareador" width="900" height="1141" loading="lazy" style="object-fit:contain;background:#fff;" /></div>
         <p class="kit-qty">Assinatura mensal</p>
         <p class="kit-old">flexível</p>
         <p class="kit-now">R$ 29,90<span style="font-size:13px;color:var(--ink-soft);font-weight:600;">/mês</span></p>
@@ -821,7 +823,7 @@
   <!-- ░░ CROSS-SELL PROTOCOLO ░░ -->
   <section class="xsell">
     <div class="xsell-block">
-      <div class="x-media"><div class="ph">[ Foto: protocolo / outros produtos Hidrabene ]</div></div>
+      <div class="x-media"><div class="ph">[ Falta: foto do protocolo — protetor FPS 70 + outro produto Hidrabene (ex.: clareador/sérum) lado a lado, 4:3 ]</div></div>
       <div>
         <p class="eyebrow">Protocolos de tratamento</p>
         <h2 class="h2">Combinações que <em>potencializam</em> os resultados.</h2>
