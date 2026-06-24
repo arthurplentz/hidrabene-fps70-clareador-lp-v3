@@ -454,6 +454,9 @@
       .band-in h2 { font-size:30px; }
       .mini-thumbs .ph, .mini-thumbs img { aspect-ratio:1/1; }
     }
+
+    /* impressão/PDF: esconde a barra fixa de compra (senão repete em toda página) */
+    @media print { #stickybar { display:none !important; } }
   </style>
 </head>
 <body>
