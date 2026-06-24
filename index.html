@@ -987,11 +987,11 @@
       if(!open) item.classList.add('open');
     }
 
-    // Checkout — Yampi: mesmo produto (token FQH20J70UC), variando a quantidade
+    // Checkout — Yampi: um link próprio por kit (preço/oferta já configurados na Yampi)
     var CHECKOUT_URLS = {
-      '1-unidade':  'https://hidrabene.pay.yampi.com.br/r/FQH20J70UC:1?promocode=PELE30',
-      '2-unidades': 'https://hidrabene.pay.yampi.com.br/r/FQH20J70UC:2?promocode=PELE45',
-      '3-unidades': 'https://hidrabene.pay.yampi.com.br/r/FQH20J70UC:3?promocode=PELE50'
+      '1-unidade':  'https://hidrabene.pay.yampi.com.br/r/FQH20J70UC',
+      '2-unidades': 'https://hidrabene.pay.yampi.com.br/r/524DBLU40W',
+      '3-unidades': 'https://hidrabene.pay.yampi.com.br/r/KIAU1RFFXS'
     };
     function comprarAgora(kit){
       var url = CHECKOUT_URLS[kit];
