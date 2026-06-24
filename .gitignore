@@ -12,3 +12,6 @@ videos ugc/
 /*.mp4
 /*.mov
 /*.webp
+
+# PDFs de revisão (não fazem parte do site)
+/*.pdf
