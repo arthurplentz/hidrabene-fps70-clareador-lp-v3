@@ -517,20 +517,6 @@
         </button>
       </div>
 
-      <!-- desbloqueio de brindes -->
-      <div class="unlock">
-        <div class="unlock-head"><b>Dê um upgrade na sua compra</b><span>Desbloqueie vantagens conforme o kit</span></div>
-        <div class="unlock-row" data-min="2" id="unlock1">
-          <svg class="unlock-ic" viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0"/></svg>
-          <span class="unlock-txt">Frete grátis para todo o Brasil</span>
-          <span class="unlock-state">Bloqueado</span>
-        </div>
-        <div class="unlock-row" data-min="3" id="unlock2">
-          <svg class="unlock-ic" viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8V21M3 12h18M12 8C9 8 7 4 12 4s3 4 0 4z"/></svg>
-          <span class="unlock-txt">Necessaire Hidrabene de brinde</span>
-          <span class="unlock-price"><s>R$ 49</s></span>
-        </div>
-      </div>
 
       <button class="btn btn-fluor add-cart" onclick="comprarSelecionado()">Comprar Agora</button>
       <p class="add-note"><span class="dotgreen"></span> Oferta de lançamento · estoque limitado · garantia de 7 dias</p>
@@ -899,21 +885,7 @@
       // sticky bar reflete o preço
       document.getElementById('sbNow').textContent = row.dataset.now;
       document.getElementById('sbOld').textContent = row.dataset.old;
-      atualizarUnlocks();
     }
-
-    // Desbloqueio de brindes conforme a quantidade
-    function qtyNum(){ var m = kitSelecionado.match(/^(\d+)/); return m ? parseInt(m[1],10) : 1; }
-    function atualizarUnlocks(){
-      var n = qtyNum();
-      document.querySelectorAll('.unlock-row').forEach(function(r){
-        var on = n >= parseInt(r.dataset.min,10);
-        r.classList.toggle('on', on);
-        var st = r.querySelector('.unlock-state');
-        if(st) st.textContent = on ? 'Liberado' : 'Bloqueado';
-      });
-    }
-    atualizarUnlocks();
 
     // Raspadinha (scratch-to-reveal)
     (function(){
